@@ -26,6 +26,5 @@ request = $.ajax({
 
 request.done(function ( msg ) {
 	$(".output").html( msg );
-}
-	
+});
 }
