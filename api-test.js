@@ -18,10 +18,7 @@ request.done(function( msg ) {
 else {
 request = $.ajax({
 	type: "GET",
-	url: config + 'member',
-	headers: {
-		"Authorization": "pjmp8jaa4i7hkss4or3nj01ov2"
-	},
+	url: config + "member",
 	dataType: "text"
 });
 
