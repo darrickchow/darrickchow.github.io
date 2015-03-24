@@ -20,7 +20,7 @@ else {
 $.ajaxPrefilter(function( options ) {
     if ( !options.beforeSend) {
         options.beforeSend = function (xhr) { 
-            xhr.setRequestHeader('Authorization', docCookies.getItem('SESSIONID');
+            xhr.setRequestHeader('Authorization', docCookies.getItem('SESSIONID'));
         }
     }
 });
