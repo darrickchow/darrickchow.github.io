@@ -17,8 +17,15 @@ request.done(function( msg ) {
 });
 }
 else {
-alert("already logged in"+docCookies.getItem("apiToken"));
-}
+request = $.ajax({
+	url: config + 'member',
+	method: "GET",
+	headers: "Authorization: "+docCookies.getItem("apiToken")
+	dataType: "text"
+});
 
-docCookies.setItem("test","test");
-alert(docCookies.getItem("test"));
+request.done(function ( msg ) {
+	$(".output").html( msg );
+}
+	
+}
