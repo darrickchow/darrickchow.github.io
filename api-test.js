@@ -20,7 +20,7 @@ else {
 request = $.ajax({
 	url: config + 'member',
 	method: "GET",
-	headers: "Authorization: "+docCookies.getItem("apiToken")
+	headers: "Authorization: "+docCookies.getItem("apiToken"),
 	dataType: "text"
 });
 
