@@ -20,7 +20,7 @@ request = $.ajax({
 	type: "GET",
 	url: config + 'member',
 	headers: {
-		"Authorization": docCookies.getItem('SESSIONID'));
+		"Authorization": docCookies.getItem('SESSIONID');
 	},
 	dataType: "text"
 });
