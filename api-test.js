@@ -12,7 +12,7 @@ var request = $.ajax({
 });
 
 request.done(function( msg ) {
-	$(".output").html( msg['response']['token'] );
+	$(".output").html( msg );
 	docCookies.setItem("token",msg,7200);
 });
 }
