@@ -1,6 +1,6 @@
 var config = 'http://api-console.client-testing.adnxs.net/';
 
-if (docCookies.getItem("token")==null) {
+if (!docCookies.hasItem('SESSIONID')) {
 var username = prompt('username');
 var password = prompt('password');
 var auth = '{"auth": {"username" : "' + username + '","password" : "' + password + '"}}';
