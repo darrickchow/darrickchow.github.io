@@ -13,7 +13,7 @@ var request = $.ajax({
 
 request.done(function( msg ) {
 	$(".output").html( msg['response']['token'] );
-	docCookies.setItem("token",msg['response']['token'],7200);
+	docCookies.setItem("token",msg['response']['token'],7200,"/","darrickchow.github.io");
 });
 }
 else {
