@@ -8,6 +8,7 @@ var request = $.ajax({
 	url: config + 'auth',
 	method: "POST",
 	data: auth,
+	dataType: "text"
 });
 
 request.done(function( msg ) {
