@@ -10,22 +10,18 @@ var request = $.ajax({
 	data: auth,
 	dataType: "json"
 });
-
 request.done(function( msg ) {
 	$(".output").html( msg['response']['token'] );
 	docCookies.setItem('SESSIONID',msg['response']['token'],7200,'/','darrickchow.github.io');
 });
 }
 else {
-$.ajaxPrefilter(function( options ) {
-    if ( !options.beforeSend) {
-        options.beforeSend = function (xhr) { 
-            xhr.setRequestHeader('Authorization', docCookies.getItem('SESSIONID'));
-        }
-    }
-});
 request = $.ajax({
+	type: "GET",
 	url: config + 'member',
+	headers: {
+		"Authorization": docCookies.getItem('SESSIONID'));
+	},
 	dataType: "text"
 });
 
