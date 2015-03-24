@@ -19,7 +19,6 @@ request.done(function( msg ) {
 else {
 request = $.ajax({
 	url: config + 'member',
-	method: "GET",
 	headers: "Authorization: "+docCookies.getItem("apiToken"),
 	dataType: "text"
 });
