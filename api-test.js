@@ -24,6 +24,6 @@ request = $.ajax({
 });
 
 request.done(function ( msg ) {
-	$(".output").html( msg );
+	$(".output").html( msg['response']['report_id'] );
 });
 }
