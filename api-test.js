@@ -8,12 +8,12 @@ var request = $.ajax({
 	url: config + 'auth',
 	method: "POST",
 	data: auth,
-	dataType: "text"
+	dataType: "json"
 });
 
 request.done(function( msg ) {
-	$(".output").html( msg );
-	docCookies.setItem("token",msg,7200);
+	$(".output").html( msg['response']['token'] );
+	docCookies.setItem("token",msg['response']['token'],7200);
 });
 }
 else {
