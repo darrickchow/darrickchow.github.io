@@ -1,6 +1,6 @@
 var config = 'http://api-console.client-testing.adnxs.net/';
 
-if (docCookies.getItem("apiToken")==null) {
+if (docCookies.getItem("token")==null) {
 var username = prompt('username');
 var password = prompt('password');
 var auth = '{"auth": {"username" : "' + username + '","password" : "' + password + '"}}';
@@ -13,13 +13,12 @@ var request = $.ajax({
 
 request.done(function( msg ) {
 	$(".output").html( msg['response']['token'] );
-	docCookies.setItem("apiToken",msg['response']['token'],7200);
+	docCookies.setItem("token",msg,7200);
 });
 }
 else {
 request = $.ajax({
 	url: config + 'member',
-	headers: "Authorization: "+docCookies.getItem("apiToken"),
 	dataType: "text"
 });
 
